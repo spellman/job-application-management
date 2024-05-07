@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "poc"
+version = "0.0.1"
+description = "Automation of process to create Google Drive and local files for job application."
+authors = ["Cort Spellman <spellman.cort@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+google-api-python-client = "^2.127.0"
+google-auth-httplib2 = "^0.2.0"
+google-auth-oauthlib = "^1.2.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

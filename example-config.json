@@ -1,0 +1,6 @@
+{
+    "local_resume_dir_path": "path/to/dir/in/which/to/store/job-application/info/and/resume/pdfs",
+    "gdrive_resume_folder_id": "id_of_the_resume_folder_in_google_drive",
+    "gdrive_general_resume_folder_id": "id_of_the_general_resume_folder_in_google_drive",
+    "resume_pdf_file_name": "<Full Name> Resume"
+}
