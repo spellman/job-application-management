@@ -1,5 +1,5 @@
 #! /bin/bash
 
 LOCAL_RESUME_DIR_PATH=$(cat config.json | jq '.local_resume_dir_path' | sed -e 's/"//g')
-selected=$(ls "$LOCAL_RESUME_DIR_PATH" | sort -r | fzf --ansi --cycle)
+selected=$(find "$LOCAL_RESUME_DIR_PATH" -maxdepth 1 -printf "%f\n" | sort -r | fzf --ansi --cycle)
 python pdf.py "$selected"
