@@ -109,10 +109,20 @@ def main(new_file_name):
     open_file_in_firefox(resume)
 
 
+def prefix_with_date_if_undated(file_name: str):
+    """If the file_name starts with a date segment, then return the file_name as
+    is. Otherwise, prefix it with today's date and ` - `."""
+    try:
+        date.fromisoformat(file_name.split(" - ")[0])
+        return file_name
+    except ValueError:
+        return f"{date.today()} - {file_name}"
+
+
 
 if __name__ == "__main__":
-    new_file_name = sys.argv[1:][0]
-    main(new_file_name)
+    file_name = sys.argv[1:][0]
+    main(prefix_with_date_if_undated(file_name))
 
 
 
