@@ -100,11 +100,11 @@ def open_file_in_text_edit(file):
     subprocess.run(["open", "-a", "textedit", file])
 
 
-def main(new_file_name):
+def main(file_name):
     creds = auth.auth()
     drive_client = build("drive", "v3", credentials=creds)
-    resume = branch_off_most_recent_general_resume(drive_client, new_file_name)
-    text_file = create_local_file(new_file_name)
+    resume = branch_off_most_recent_general_resume(drive_client, file_name)
+    text_file = create_local_file(file_name)
     open_file_in_text_edit(text_file)
     open_file_in_firefox(resume)
 
