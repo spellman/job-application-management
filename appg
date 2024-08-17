@@ -1,0 +1,3 @@
+#! /bin/bash
+
+python apply_with_general.py "$1"
