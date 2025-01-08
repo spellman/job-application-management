@@ -1,5 +1,4 @@
 #!/bin/bash
 
 LOCAL_RESUME_DIR_PATH=$(cat config.json | jq '.local_resume_dir_path' | sed -e 's/"//g')
-selected=$(find "$LOCAL_RESUME_DIR_PATH" -maxdepth 1 -printf "%f\n" | sort -r | fzf --ansi --cycle)
-python pdf.py "$selected"
+selected=$(find "$LOCAL_RESUME_DIR_PATH" -maxdepth 1 -type d -not -name "Resumes and Job Applications" -not -name "General" -printf "%f\n" | sort -r | fzf --ansi --cycle)
